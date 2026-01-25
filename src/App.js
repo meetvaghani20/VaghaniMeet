@@ -14,7 +14,6 @@ import ScrollToTop from './components/ScrollToTop';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   useEffect(() => {
@@ -38,7 +37,6 @@ function App() {
       <Contact />
       <Footer />
       <ScrollToTop />
-      <SpeedInsights />
     </div>
   );
 }
