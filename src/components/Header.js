@@ -15,7 +15,7 @@ const Header = () => {
             className="rounded-circle"
             style={{ objectFit: 'cover' }}
           />
-          <span className="fw-bold">Vaghani Meet Portfolio</span>
+          <span className="fw-bold">Vaghani Meet</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
