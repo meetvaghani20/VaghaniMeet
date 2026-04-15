@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "",
+    title: "Loan Matrix Smart Data Insights ",
     description: "",
     tags: ["", "", ""],
     image: ""
