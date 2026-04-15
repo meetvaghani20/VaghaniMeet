@@ -7,7 +7,7 @@ const projects = [
     title: "Loan Matrix Smart Data Insights ",
     description: "",
     tags: ["", "", ""],
-    image: "https://drive.google.com/file/d/1b0XzXarZvmYq4Z2qSvsLI3GAomt7W3gp/view?usp=drive_link"
+    image: "project-1.png"
   },
   {
     title: "",
