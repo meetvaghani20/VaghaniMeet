@@ -56,7 +56,7 @@ const Projects = () => {
                       <FaGithub /> Code
                     </a>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a href="#" className="btn btn-sm btn-custom rounded-pill px-3 d-flex align-items-center gap-2">
+                    <a href="https://credit-guard.netlify.app/" className="btn btn-sm btn-custom rounded-pill px-3 d-flex align-items-center gap-2">
                       <FaExternalLinkAlt /> Live Demo
                     </a>
                   </div>
