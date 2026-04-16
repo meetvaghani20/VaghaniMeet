@@ -5,7 +5,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
   {
     title: "Loan Matrix Smart Data Insights ",
-    description: "",
+    description: "Powerful Features for Smarter Lending - Advanced Topic Modeling,Real-time Predictions , Comprehensive Analytics , Secure & Compliant",
     tags: ["", "", ""],
     image: "project-1.png"
   },
