@@ -52,7 +52,7 @@ const Projects = () => {
                   </div>
                   <div className="d-flex gap-3">
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a href="#" className="btn btn-sm btn-outline-light rounded-pill px-3 d-flex align-items-center gap-2 hover-accent">
+                    <a href="https://github.com/meetvaghani20/Credit-Guard.git" className="btn btn-sm btn-outline-light rounded-pill px-3 d-flex align-items-center gap-2 hover-accent">
                       <FaGithub /> Code
                     </a>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
