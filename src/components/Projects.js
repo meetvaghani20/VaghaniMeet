@@ -7,7 +7,7 @@ const projects = [
     title: "Loan Matrix Smart Data Insights ",
     description: "Powerful Features for Smarter Lending - Advanced Topic Modeling,Real-time Predictions , Comprehensive Analytics , Secure & Compliant",
     tags: ["", "", ""],
-    image: "project-1.jpg"
+    image: "project1.jpg"
   },
   {
     title: "",
