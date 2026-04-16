@@ -36,7 +36,7 @@ const Projects = () => {
               <Card className="card-custom h-100 border-0">
                 <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
                   <div className="position-absolute w-100 h-100 bg-dark opacity-25 hover-opacity-0 transition-all"></div>
-                  <Card.Img variant="top" src={project.image} style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
+                  <Card.Img variant="top" src="project1.jpg" style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
                 </div>
                 <Card.Body className="d-flex flex-column p-4">
                   <Card.Title className="fw-bold mb-3 text-white">{project.title}</Card.Title>
