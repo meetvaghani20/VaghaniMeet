@@ -14,7 +14,7 @@ const Hero = () => {
           <Col lg={6} data-aos="fade-right">
             <h5 className="text-accent mb-5 fw-bold ls-2">HELLO, I'M VAGHANI MEET</h5>
             <h1 className="display-1 fw-bold mb-5 lh-1">
-              Creative <span className="text-gradient">Developer</span>
+              AI <span className="text-gradient">Developer</span>
             </h1>
             <p className="lead text-white mb-5" style={{ maxWidth: '600px' }}>
               I build exceptional digital experiences that are fast, accessible, and visually stunning.
