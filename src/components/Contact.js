@@ -2,7 +2,35 @@ import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 
+const whatsappNumber = '919327434099';
+
 const Contact = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+
+    const whatsappMessage = [
+      'New contact form message',
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      `Message: ${message}`
+    ].join('\n');
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
+
+    event.currentTarget.reset();
+  };
+
   return (
     <section id="contact" className="section-padding">
       <Container>
@@ -58,15 +86,17 @@ const Contact = () => {
               <h3 className="fw-bold mb-4">Get In Touch</h3>
               <p className="text-white mb-4">Praesent sapien massa, convallis a pellent</p>
 
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md={6} className="mb-3">
                     <Form.Group>
                       <Form.Label className="small fw-bold text-white">Your Name</Form.Label>
                       <Form.Control
+                        name="name"
                         type="text"
                         placeholder="Enter your name"
                         className="bg-transparent border-secondary text-white p-3"
+                        required
                       />
                     </Form.Group>
                   </Col>
@@ -74,9 +104,11 @@ const Contact = () => {
                     <Form.Group>
                       <Form.Label className="small fw-bold text-white">Your Email</Form.Label>
                       <Form.Control
+                        name="email"
                         type="email"
                         placeholder="Enter your email"
                         className="bg-transparent border-secondary text-white p-3"
+                        required
                       />
                     </Form.Group>
                   </Col>
@@ -84,18 +116,22 @@ const Contact = () => {
                 <Form.Group className="mb-3">
                   <Form.Label className="small fw-bold text-white">Subject</Form.Label>
                   <Form.Control
+                    name="subject"
                     type="text"
                     placeholder="Enter subject"
                     className="bg-transparent border-secondary text-white p-3"
+                    required
                   />
                 </Form.Group>
                 <Form.Group className="mb-4">
                   <Form.Label className="small fw-bold text-white">Message</Form.Label>
                   <Form.Control
+                    name="message"
                     as="textarea"
                     rows={5}
                     placeholder="Your message"
                     className="bg-transparent border-secondary text-white p-3"
+                    required
                   />
                 </Form.Group>
                 <button type="submit" className="btn btn-custom w-100 d-flex align-items-center justify-content-center gap-2">
