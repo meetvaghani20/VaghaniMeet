@@ -1,27 +1,19 @@
 import React from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import projectOneImage from '../PHOTO/project1.jpg';
 
 const projects = [
   {
-    title: "Loan Matrix Smart Data Insights ",
-    description: "Powerful Features for Smarter Lending - Advanced Topic Modeling,Real-time Predictions , Comprehensive Analytics , Secure & Compliant",
-    tags: ["", "", ""],
-    image: ""
-  },
-  {
-    title: "",
-    description: "",
-    tags: ["", "", ""],
-    image: ""
-  },
-  {
-    title: "",
-    description: "",
-    tags: ["", "", ""],
-    image: ""
+    title: 'Loan Matrix Smart Data Insights',
+    description:
+      'Powerful features for smarter lending with advanced topic modeling, real-time predictions, comprehensive analytics, and secure workflows.',
+    tags: ['Topic Modeling', 'Predictions', 'Analytics'],
+    image: projectOneImage,
+    codeUrl: 'https://github.com/meetvaghani20/Credit-Guard.git',
+    liveUrl: 'https://credit-guard.netlify.app/'
   }
-];
+].filter((project) => project.title && project.description);
 
 const Projects = () => {
   return (
@@ -32,11 +24,22 @@ const Projects = () => {
         </div>
         <Row>
           {projects.map((project, index) => (
-            <Col lg={4} md={6} className="mb-4" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+            <Col lg={4} md={6} className="mb-4" key={project.title} data-aos="fade-up" data-aos-delay={index * 100}>
               <Card className="card-custom h-100 border-0">
                 <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
                   <div className="position-absolute w-100 h-100 bg-dark opacity-25 hover-opacity-0 transition-all"></div>
-                  <Card.Img variant="top" src="project1.jpg" style={{ objectFit: 'cover', height: '100%', width: '100%' }} />
+                  {project.image ? (
+                    <Card.Img
+                      variant="top"
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+                    />
+                  ) : (
+                    <div className="d-flex align-items-center justify-content-center h-100 text-white-50">
+                      Project image coming soon
+                    </div>
+                  )}
                 </div>
                 <Card.Body className="d-flex flex-column p-4">
                   <Card.Title className="fw-bold mb-3 text-white">{project.title}</Card.Title>
@@ -44,21 +47,35 @@ const Projects = () => {
                     {project.description}
                   </Card.Text>
                   <div className="mb-4">
-                    {project.tags.map((tag, i) => (
-                      <Badge bg="dark" className="border border-secondary text-accent me-2 mb-2 px-3 py-2 fw-normal" key={i}>
-                        {tag}
-                      </Badge>
-                    ))}
+                    {project.tags
+                      .filter(Boolean)
+                      .map((tag) => (
+                        <Badge bg="dark" className="border border-secondary text-accent me-2 mb-2 px-3 py-2 fw-normal" key={tag}>
+                          {tag}
+                        </Badge>
+                      ))}
                   </div>
                   <div className="d-flex gap-3">
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a href="https://github.com/meetvaghani20/Credit-Guard.git" className="btn btn-sm btn-outline-light rounded-pill px-3 d-flex align-items-center gap-2 hover-accent">
-                      <FaGithub /> Code
-                    </a>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a href="https://credit-guard.netlify.app/" className="btn btn-sm btn-custom rounded-pill px-3 d-flex align-items-center gap-2">
-                      <FaExternalLinkAlt /> Live Demo
-                    </a>
+                    {project.codeUrl ? (
+                      <a
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-sm btn-outline-light rounded-pill px-3 d-flex align-items-center gap-2 hover-accent"
+                      >
+                        <FaGithub /> Code
+                      </a>
+                    ) : null}
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-sm btn-custom rounded-pill px-3 d-flex align-items-center gap-2"
+                      >
+                        <FaExternalLinkAlt /> Live Demo
+                      </a>
+                    ) : null}
                   </div>
                 </Card.Body>
               </Card>
